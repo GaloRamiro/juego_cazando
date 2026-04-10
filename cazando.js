@@ -54,19 +54,23 @@ function limpiarCanva(){
 function moverIzquierda(){
    gatoX = gatoX - VELOCIDAD;
    actualizarPantalla();
+   detectarColicion();
 }
 function moverDerecha(){
    gatoX = gatoX + VELOCIDAD;
    actualizarPantalla();
+   detectarColicion();
 }
 function moverArriba(){
    gatoY = gatoY - VELOCIDAD;
    actualizarPantalla();
+   detectarColicion();
 }
 
 function moverAbajo(){
    gatoY = gatoY + VELOCIDAD;
    actualizarPantalla();
+   detectarColicion();
 }
 
 
@@ -75,3 +79,13 @@ function actualizarPantalla(){
     graficarGato();
     graficarComida();
 }
+function detectarColicion(){
+    if(comidaX + ANCHO_COMIDA > gatoX &&
+       comidaX < gatoX + ANCHO_GATO &&
+       comidaY + ALTO_COMIDA > gatoY &&
+       comidaY < gatoY + ALTO_GATO
+    ){
+      alert("atrapado");
+    }
+
+    }
