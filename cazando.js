@@ -3,12 +3,9 @@ let canvas=document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 
 
-const VELOCIDAD = 15;
+const VELOCIDAD = 10;
 
-document.getElementById("btnArriba").onclick = () => mover("arriba");
-document.getElementById("btnAbajo").onclick = () => mover("abajo");
-document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
-document.getElementById("btnDerecha").onclick = () => mover("derecha");
+
 /*Definir Variables*/
 let gatoX=0;
 let gatoY=0;
@@ -48,12 +45,33 @@ function graficarComida(){
 }
 
 
-function mover(direccion){
-    
-    if (direccion === "arriba") gatoY -= VELOCIDAD; 
-    if (direccion === "abajo")gatoY += VELOCIDAD;   
-    if (direccion === "izquierda")gatoX -= VELOCIDAD; 
-    if (direccion === "derecha") gatoX += VELOCIDAD;
-    graficarGato()
- 
+
+
+function limpiarCanva(){
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+}
+
+function moverIzquierda(){
+   gatoX = gatoX - VELOCIDAD;
+   actualizarPantalla();
+}
+function moverDerecha(){
+   gatoX = gatoX + VELOCIDAD;
+   actualizarPantalla();
+}
+function moverArriba(){
+   gatoY = gatoY - VELOCIDAD;
+   actualizarPantalla();
+}
+
+function moverAbajo(){
+   gatoY = gatoY + VELOCIDAD;
+   actualizarPantalla();
+}
+
+
+function actualizarPantalla(){
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
 }
