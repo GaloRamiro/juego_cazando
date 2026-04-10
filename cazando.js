@@ -12,6 +12,8 @@ let gatoY=0;
 let comidaX=100;
 let comidaY=100;
 let puntos=0;
+let tiempo=10;
+let intervalo;
 /*Definir Constantes*/
 const ALTO_GATO=50;
 const ANCHO_GATO=50;
@@ -23,6 +25,7 @@ const ALTO_COMIDA=30;
 /* obtener el canbas y su contexto para dibujar*/
 
 function IniciarJuego(){
+ intervalo = setInterval(restarTiempo,1000);
  gatoX = (canvas.width / 2) - (ANCHO_GATO / 2); 
  gatoY = (canvas.height / 2) - (ALTO_GATO/ 2);
 
@@ -95,4 +98,13 @@ function aparecerComida(){
     comidaX = generarAleatorio(0, canvas.width-ANCHO_COMIDA);
     comidaY = generarAleatorio(0, canvas.height-ALTO_COMIDA);
     actualizarPantalla();
+}
+function restarTiempo(){
+    if (tiempo > 0){
+        tiempo --;
+         mostrarEnSpan("txttiempo",tiempo);
+    }else{
+        clearInterval(intervalo);;//DETIENE EL TIEMPO
+        mostrarEnSpan("txttiempo","GAME OVER");
+    }
 }
