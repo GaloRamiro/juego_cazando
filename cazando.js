@@ -11,7 +11,7 @@ let gatoX=0;
 let gatoY=0;
 let comidaX=100;
 let comidaY=100;
-
+let puntos=0;
 /*Definir Constantes*/
 const ALTO_GATO=50;
 const ANCHO_GATO=50;
@@ -86,6 +86,8 @@ function detectarColicion(){
        comidaY < gatoY + ALTO_GATO
     ){
       alert("atrapado");
+      puntos = puntos +1;
+      mostrarEnSpan("txtPuntos",puntos);
     }
 
     }
