@@ -1,6 +1,14 @@
 /* obtener el canbas y su contexto para dibujar*/
 let canvas=document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
+
+
+const VELOCIDAD = 15;
+
+document.getElementById("btnArriba").onclick = () => mover("arriba");
+document.getElementById("btnAbajo").onclick = () => mover("abajo");
+document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
+document.getElementById("btnDerecha").onclick = () => mover("derecha");
 /*Definir Variables*/
 let gatoX=0;
 let gatoY=0;
@@ -40,3 +48,12 @@ function graficarComida(){
 }
 
 
+function mover(direccion){
+    
+    if (direccion === "arriba") gatoY -= VELOCIDAD; 
+    if (direccion === "abajo")gatoY += VELOCIDAD;   
+    if (direccion === "izquierda")gatoX -= VELOCIDAD; 
+    if (direccion === "derecha") gatoX += VELOCIDAD;
+    graficarGato()
+ 
+}
