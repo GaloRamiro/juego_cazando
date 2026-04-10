@@ -16,7 +16,7 @@ let comidaY=100;// posición vertical de la comida
 let puntos=0;// contador de puntos
 let tiempo=10;// tiempo inicial del juego (segundos)
 let intervalo;// almacenará el setInterval
-
+let juegoActivo = true;
 /* ================= CONSTANTES ================= */
 const ALTO_GATO=50;
 const ANCHO_GATO=50;
@@ -59,22 +59,26 @@ function limpiarCanva(){
 
 /* ================= MOVIMIENTOS ================= */
 function moverIzquierda(){
+   if (!juegoActivo)return;
    gatoX = gatoX - VELOCIDAD;
    actualizarPantalla();
    detectarColicion();
 }
 function moverDerecha(){
+   if (!juegoActivo)return;
    gatoX = gatoX + VELOCIDAD;
    actualizarPantalla();
    detectarColicion();
 }
 function moverArriba(){
+   if (!juegoActivo)return;
    gatoY = gatoY - VELOCIDAD;
    actualizarPantalla();
    detectarColicion();
 }
 
 function moverAbajo(){
+   if (!juegoActivo)return;
    gatoY = gatoY + VELOCIDAD;
    actualizarPantalla();
    detectarColicion();
@@ -121,6 +125,7 @@ function aparecerComida(){
 function restarTiempo(){
     if (tiempo <= 0){
         tiempo =0;
+        juegoActivo= false;//detener juego
          mostrarEnSpan("txtTiempo","GAME OVER");// mensaje final
          clearInterval(intervalo); // detener juego
          return;
@@ -132,6 +137,7 @@ function restarTiempo(){
 }
 /* ================= REINICIAR JUEGO ================= */
 function  reiniciarJuego(){
+    juegoActivo = true;
     clearInterval(intervalo);// detener intervalo anterior
     puntos=0;
     tiempo=10;
