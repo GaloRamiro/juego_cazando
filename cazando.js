@@ -90,6 +90,10 @@ function detectarColicion(){
     ){
       aparecerComida();
       puntos = puntos +1;
+      if(puntos>=6){
+        
+        clearInterval(intervalo);
+      }
       mostrarEnSpan("txtPuntos",puntos);
     }
 
@@ -104,7 +108,8 @@ function restarTiempo(){
         tiempo --;
          mostrarEnSpan("txttiempo",tiempo);
     }else{
-        clearInterval(intervalo);;//DETIENE EL TIEMPO
-        mostrarEnSpan("txttiempo","GAME OVER");
+        clearInterval(intervalo);//DETIENE EL TIEMPO
+        alert("GANADOR")
+        //mostrarEnSpan("txtTiempo","GAME OVER");
     }
 }
