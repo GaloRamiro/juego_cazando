@@ -85,9 +85,14 @@ function detectarColicion(){
        comidaY + ALTO_COMIDA > gatoY &&
        comidaY < gatoY + ALTO_GATO
     ){
-      alert("atrapado");
+      aparecerComida();
       puntos = puntos +1;
       mostrarEnSpan("txtPuntos",puntos);
     }
 
     }
+function aparecerComida(){
+    comidaX = generarAleatorio(0, canvas.width-ANCHO_COMIDA);
+    comidaY = generarAleatorio(0, canvas.height-ALTO_COMIDA);
+    actualizarPantalla();
+}
