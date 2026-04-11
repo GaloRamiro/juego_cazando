@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juego Cazando</title>
+ <link rel="stylesheet" href="cazando.css">
+ <script src="utils.js"></script>
+</head>
+<body onload="IniciarJuego()">
+
+  <h1>Juego Cazando</h1>
+  <p>Autor: Galo Cisneros</p>
+   <canvas id="areaJuego" width="500" height="500"></canvas>
+
+  <div class="controles">
+ <button id="btnArriba" onclick="moverArriba()">⬆</button>
+    <br>
+    <button id="btnIzquierda" onclick="moverIzquierda()">⬅</button>
+    <button id="btnAbajo" onclick="moverAbajo()">⬇</button>
+    <button id="btnDerecha"onclick="moverDerecha()">➡</button>
+  </div>
+  <div class="panel">
+    <button onclick="reiniciarJuego()">REINICIAR</button>
+  </div>
+
+  <div class="panel">
+    <span>Puntos: <span id="txtPuntos">0</span></span>
+    <span>Tiempo: <span id="txtTiempo">10</span></span>
+  </div>
+
+  <p id="mensaje"></p>
+ <script src="cazando.js"></script>
+
+</body>
+</html>
