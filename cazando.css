@@ -1,42 +1,185 @@
-body {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
+/* RESET */
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
 }
 
+/* FONDO CYBERPUNK */
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #0a0f1f, #02030a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #00f7ff;
+  overflow: hidden;
+}
+
+/* EFECTO GRID FUTURISTA */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#00f7ff22 1px, transparent 1px),
+              linear-gradient(90deg, #00f7ff22 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+/* CONTENIDO ENCIMA */
+body * {
+  position: relative;
+  z-index: 1;
+}
+
+/* TÍTULO */
 h1 {
+  font-size: 3rem;
   margin-bottom: 5px;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    0 0 40px #00f7ff;
 }
 
-.panel {
-  margin: 15px 0;
+/* SUBTEXTO */
+p {
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+/* CANVAS COMO PANTALLA DE JUEGO */
+#areaJuego {
+  border-radius: 15px;
+  border: 2px solid #00f7ff;
+  background: #000;
+  padding: 5px;
+  
+  /* EFECTO PANTALLA */
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 30px #00f7ff,
+    inset 0 0 20px #00f7ff44,
+    inset 0 0 60px #00f7ff22;
+
+  margin: 20px 0;
+}
+
+/* CONTROLES */
+/* CONTROLES COMO TECLADO */
+.controles {
+  display: grid;
+  grid-template-areas:
+    ". arriba ."
+    "izquierda abajo derecha";
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* ASIGNAR POSICIONES */
+#btnArriba {
+  grid-area: arriba;
+}
+
+#btnIzquierda {
+  grid-area: izquierda;
+}
+
+#btnAbajo {
+  grid-area: abajo;
+}
+
+#btnDerecha {
+  grid-area: derecha;
+}
+
+/* FILA DE BOTONES */
+.controles button {
+  margin: 5px;
+}
+
+/* BOTONES FUTURISTAS */
+button {
+  background: rgba(0, 247, 255, 0.05);
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  padding: 12px 18px;
   font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+
+  /* EFECTOS */
+  box-shadow:
+    0 0 5px #00f7ff,
+    inset 0 0 10px #00f7ff33;
+
+  transition: all 0.2s ease;
+}
+
+/* HOVER */
+button:hover {
+  transform: scale(1.15);
+  background: #00f7ff;
+  color: #000;
+
+  box-shadow:
+    0 0 15px #00f7ff,
+    0 0 40px #00f7ff,
+    inset 0 0 10px #ffffff;
+}
+
+/* CLICK */
+button:active {
+  transform: scale(0.95);
+}
+
+/* PANEL HUD */
+.panel {
   display: flex;
   justify-content: center;
   gap: 30px;
-}
-
-canvas {
-  background: white;
-  border: 2px solid black;
-}
-
-.controles {
-  margin-top: 20px;
-}
-
-button {
-  margin: 5px;
-  padding: 10px 16px;
+  margin-top: 10px;
   font-size: 18px;
-  cursor: pointer;
+
+  text-shadow:
+    0 0 5px #00f7ff,
+    0 0 10px #00f7ff;
 }
 
-#mensaje {
-  font-size: 20px;
+/* TEXTO DE PUNTOS Y TIEMPO */
+#txtPuntos,
+#txtTiempo {
   font-weight: bold;
-  color: darkred;
+  color: #00f7ff;
+}
+
+/* MENSAJE FINAL */
+#mensaje {
   margin-top: 15px;
+  font-size: 20px;
+  text-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff;
+}
+
+/* BOTÓN REINICIAR DESTACADO */
+.panel button {
+  border-color: #ff00ff;
+  color: #ff00ff;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+.panel button:hover {
+  background: #ff00ff;
+  color: #000;
+  box-shadow:
+    0 0 20px #ff00ff,
+    0 0 40px #ff00ff;
 }
