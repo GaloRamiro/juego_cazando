@@ -1,0 +1,8 @@
+Prompt 1:
+Mejora el diseño visual de este juego HTML llamado "Juego Cazando" usando únicamente CSS, sin modificar el JavaScript. El juego usa un canvas de 500x500, botones de dirección (arriba, abajo, izquierda, derecha), un botón de reinicio, y muestra puntos y tiempo. Quiero un estilo moderno tipo videojuego: - Fondo oscuro con degradado - Área del canvas con borde brillante (efecto neon o glow) - Botones con animaciones (hover, escala) - Texto con sombra luminosa - Diseño centrado y organizado tipo HUD No cambies la funcionalidad, solo el diseño visual.
+
+Prompt adicional:
+Haz el diseño más atractivo estilo videojuego futurista: - Agrega efectos de iluminación (box-shadow) - Usa colores tipo azul neon o cyberpunk - Mejora la apariencia de los botones con bordes redondeados - Centra todos los elementos en la pantalla - Haz que el canvas parezca una pantalla de juego
+
+Prompt adicional:
+los botones esta en vertical y quiero que esten como los del teclado
