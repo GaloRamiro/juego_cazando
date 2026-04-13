@@ -1,0 +1,17 @@
+Prompt 2:
+Agrega un fondo visual atractivo a este juego HTML tipo videojuego.
+
+Usa una imagen de fondo (background) que combine con un estilo gamer o futurista.
+
+Además:
+- Mejora el diseño del canvas para que combine con el fondo
+- Mantén buena legibilidad del texto
+- No modifiques JavaScript
+
+Prompt adicional:
+Haz que el fondo del juego tenga estilo videojuego (tipo cyberpunk o espacio).
+
+- Usa una imagen de fondo de alta calidad
+- Aplica overlay oscuro para mejorar visibilidad
+- Mantén el canvas destacado sobre el fondo
+- Mejora la estética general del juego
