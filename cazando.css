@@ -8,15 +8,16 @@
 
 /* FONDO CYBERPUNK */
 body {
-  height: 100vh;
+  min-height: 100vh;
   background: url("img/Fondo.jpg") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* 👈 CLAVE */
   color: #00f7ff;
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
+  padding-top: 30px; /* 👈 opcional para que no quede pegado arriba */
 }
 
 /* EFECTO GRID FUTURISTA */
@@ -183,4 +184,9 @@ button:active {
   box-shadow:
     0 0 20px #ff00ff,
     0 0 40px #ff00ff;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
 }

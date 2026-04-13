@@ -100,6 +100,8 @@ function detectarColicion(){
     ){
       aparecerComida();// mover comida a otra posición
       puntos = puntos +1; // sumar puntos
+      tiempo = 10; // REINICIA EL TIEMPO
+      mostrarEnSpan("txtTiempo", tiempo); // actualizar en pantalla
 
       // condición de victoria
       if(puntos>=6){
