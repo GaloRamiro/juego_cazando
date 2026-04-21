@@ -14,7 +14,7 @@ let comidaX=100;// posición horizontal de la comida
 let comidaY=100;// posición vertical de la comida
 
 let puntos=0;// contador de puntos
-let tiempo=10;// tiempo inicial del juego (segundos)
+let tiempo=15;// tiempo inicial del juego (segundos)
 let intervalo;// almacenará el setInterval
 let juegoActivo = true;
 /* ================= CONSTANTES ================= */
@@ -101,7 +101,7 @@ function detectarColicion(){
       aparecerComida();// mover comida a otra posición
       puntos = puntos +1; // sumar puntos
       tiempo = 10; // REINICIA EL TIEMPO
-      mostrarEnSpan("txtTiempo", tiempo); // actualizar en pantalla
+      mostrarEnSpan("txtTiempo", tiempo); // Ya se reinicia el tiempo cada vez que atrapa a comida
 
       // condición de victoria
       if(puntos>=6){
