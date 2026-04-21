@@ -18,6 +18,8 @@ let tiempo=15;// tiempo inicial del juego (segundos)
 
 let imgGato = new Image();
 imgGato.src = "img/gato.png";
+let imgComida = new Image();
+imgComida.src = "img/comida.png";
 let intervalo;// almacenará el setInterval
 let juegoActivo = true;
 /* ================= CONSTANTES ================= */
@@ -52,7 +54,8 @@ function graficarGato(){
 }
 
 function graficarComida(){
-     graficar(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#df1111");// comida roja
+    ctx.drawImage(imgComida, comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);// comida roja
+    
 }
 
 /* ================= LIMPIAR PANTALLA ================= */
