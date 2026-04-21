@@ -15,6 +15,9 @@ let comidaY=100;// posición vertical de la comida
 
 let puntos=0;// contador de puntos
 let tiempo=15;// tiempo inicial del juego (segundos)
+
+let imgGato = new Image();
+imgGato.src = "img/gato.png";
 let intervalo;// almacenará el setInterval
 let juegoActivo = true;
 /* ================= CONSTANTES ================= */
@@ -45,7 +48,7 @@ function graficar(x,y,ancho,alto,color){
 
 /* ================= DIBUJAR PERSONAJES ================= */
 function graficarGato(){
-     graficar(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "#000000");// gato negro
+    ctx.drawImage(imgGato, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);// cambio de rectangulo a gato
 }
 
 function graficarComida(){
