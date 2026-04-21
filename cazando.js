@@ -100,7 +100,7 @@ function detectarColicion(){
     ){
       aparecerComida();// mover comida a otra posición
       puntos = puntos +1; // sumar puntos
-      tiempo = 10; // REINICIA EL TIEMPO
+      tiempo = 10; // tiempo se reduce y aumenta la dificultad del tiemp 
       mostrarEnSpan("txtTiempo", tiempo); // Ya se reinicia el tiempo cada vez que atrapa a comida
 
       // condición de victoria
@@ -132,7 +132,8 @@ function restarTiempo(){
          clearInterval(intervalo); // detener juego
          return;
     }else{
-        tiempo --;// disminuir tiempo
+
+        tiempo --;// DISMINUYE EL TIEMPO EN 1 segundo
 
         mostrarEnSpan("txtTiempo",tiempo);// mostrar tiempo
     }
